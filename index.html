@@ -1,0 +1,213 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Mood Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Mood</h1>
+        <label>How is your mood right now?</label>
+        <select class="question">
+            <option value="4.0">Great</option>
+            <option value="3.5">Really good</option>
+            <option value="3.0">Good</option>
+            <option value="2.5">Pretty good</option>
+            <option value="2.0">Ok</option>
+            <option value="1.5">Not great</option>
+            <option value="1.0">Bad</option>
+            <option value="0.5">Really bad</option>
+            <option value="0.0">Terrible</option>
+        </select>
+        <p></p>
+
+        <label>Are you optimistic about the future?</label>
+        <select class="question">
+            <option value="4.0">Yes!!</option>
+            <option value="3.5">Yes, very much</option>
+            <option value="3.0">Yes</option>
+            <option value="2.5">Yes, somewhat</option>
+            <option value="2.0">So-so (ok, neutral)</option>
+            <option value="1.5">No, not really</option>
+            <option value="1.0">No</option>
+            <option value="0.5">No, not at all</option>
+            <option value="0.0">No!!</option>
+        </select>
+        <p></p>
+
+        <label>Are you enthusiastic/excited?</label>
+        <select class="question">
+            <option value="4.0">Great</option>
+            <option value="3.5">Really good</option>
+            <option value="3.0">Good</option>
+            <option value="2.5">Pretty good</option>
+            <option value="2.0">Ok</option>
+            <option value="1.5">Not great</option>
+            <option value="1.0">Bad</option>
+            <option value="0.5">Really bad</option>
+            <option value="0.0">Terrible</option>
+        </select>
+        <p></p>
+
+        <label>Do you feel self-confident?</label>
+        <select class="question">
+            <option value="4.0">Yes!!</option>
+            <option value="3.5">Yes, very much</option>
+            <option value="3.0">Yes</option>
+            <option value="2.5">Yes, somewhat</option>
+            <option value="2.0">So-so (ok, neutral)</option>
+            <option value="1.5">No, not really</option>
+            <option value="1.0">No</option>
+            <option value="0.5">No, not at all</option>
+            <option value="0.0">No!!</option>
+        </select>
+        <p></p>
+
+        <label>Do you feel intellectually stimulated?</label>
+        <select class="question">
+            <option value="4.0">Yes!!</option>
+            <option value="3.5">Yes, very much</option>
+            <option value="3.0">Yes</option>
+            <option value="2.5">Yes, somewhat</option>
+            <option value="2.0">So-so (ok, neutral)</option>
+            <option value="1.5">No, not really</option>
+            <option value="1.0">No</option>
+            <option value="0.5">No, not at all</option>
+            <option value="0.0">No!!</option>
+        </select>
+        <p></p>
+
+        <label>How were your most recent interactions?</label>
+        <select class="question">
+            <option value="4.0">Yes!!</option>
+            <option value="3.5">Yes, very much</option>
+            <option value="3.0">Yes</option>
+            <option value="2.5">Yes, somewhat</option>
+            <option value="2.0">So-so (ok, neutral)</option>
+            <option value="1.5">No, not really</option>
+            <option value="1.0">No</option>
+            <option value="0.5">No, not at all</option>
+            <option value="0.0">No!!</option>
+        </select>
+        <p></p>
+
+        <label>Have you been smiling/laughing?</label>
+        <select class="question">
+            <option value="4.0">Yes!!</option>
+            <option value="3.5">Yes, very much</option>
+            <option value="3.0">Yes</option>
+            <option value="2.5">Yes, somewhat</option>
+            <option value="2.0">So-so (ok, neutral)</option>
+            <option value="1.5">No, not really</option>
+            <option value="1.0">No</option>
+            <option value="0.5">No, not at all</option>
+            <option value="0.0">No!!</option>
+        </select>
+        <p></p>
+
+        <label>Do you feel involved/engaged?</label>
+        <select class="question">
+            <option value="4.0">Great</option>
+            <option value="3.5">Really good</option>
+            <option value="3.0">Good</option>
+            <option value="2.5">Pretty good</option>
+            <option value="2.0">Ok</option>
+            <option value="1.5">Not great</option>
+            <option value="1.0">Bad</option>
+            <option value="0.5">Really bad</option>
+            <option value="0.0">Terrible</option>
+        </select>
+        <p></p>
+
+        <label>Do you feel relaxed?</label>
+        <select class="question">
+            <option value="4.0">Yes!!</option>
+            <option value="3.5">Yes, very much</option>
+            <option value="3.0">Yes</option>
+            <option value="2.5">Yes, somewhat</option>
+            <option value="2.0">So-so (ok, neutral)</option>
+            <option value="1.5">No, not really</option>
+            <option value="1.0">No</option>
+            <option value="0.5">No, not at all</option>
+            <option value="0.0">No!!</option>
+        </select>
+        <p></p>
+
+        <label>Do you accept your current situation?</label>
+        <select class="question">
+            <option value="4.0">Yes!!</option>
+            <option value="3.5">Yes, very much</option>
+            <option value="3.0">Yes</option>
+            <option value="2.5">Yes, somewhat</option>
+            <option value="2.0">So-so (ok, neutral)</option>
+            <option value="1.5">No, not really</option>
+            <option value="1.0">No</option>
+            <option value="0.5">No, not at all</option>
+            <option value="0.0">No!!</option>
+        </select>
+        <p></p>
+
+        <button onclick="calculateMood()">Calculate</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateMood() {
+            const questions = document.querySelectorAll('.question');
+            let moodScore = 0;
+
+            questions.forEach(question => {
+                const score = parseFloat(question.value);
+                moodScore += score;
+            });
+
+            moodScore = (5 * moodScore) / 2;
+
+            let moodCategory = '';
+            if (moodScore >= 90) {
+                moodCategory = 'Extreme mood elevation';
+            } else if (moodScore >= 80) {
+                moodCategory = 'Memorable mood elevation';
+            } else if (moodScore >= 70) {
+                moodCategory = 'Substantial mood elevation';
+            } else if (moodScore >= 60) {
+                moodCategory = 'Significant mood elevation';
+            } else if (moodScore >= 51) {
+                moodCategory = 'Slight mood elevation';
+            } else if (moodScore === 50) {
+                moodCategory = 'Ok (so-so)';
+            } else if (moodScore >= 40) {
+                moodCategory = 'Mildly depressed mood';
+            } else if (moodScore >= 30) {
+                moodCategory = 'Moderately depressed mood';
+            } else if (moodScore >= 20) {
+                moodCategory = 'Seriously depressed mood';
+            } else if (moodScore >= 10) {
+                moodCategory = 'Severely depressed mood';
+            } else {
+                moodCategory = 'Extremely depressed mood';
+            }
+
+            document.getElementById('result').textContent = `Your mood score is ${moodScore}. ${moodCategory}.`;
+        }
+    </script>
+</body>
+</html>
