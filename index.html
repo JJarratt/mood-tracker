@@ -1,13 +1,13 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Mood Calculator</title>
+    <title>Mood Tracker</title>
     <style>
         body {
             font-family: Arial, sans-serif;
         }
         #container {
-            width: 400px;
+            width: 550px;
             margin: 0 auto;
             padding: 20px;
             border: 1px solid #ccc;
@@ -19,6 +19,62 @@
         }
         button {
             margin-top: 20px;
+        }
+
+        /* Desktop styles */
+        @media (min-width: 768px) {
+            body {
+                background-color: #f2f2f2;
+            }
+            #container {
+                width: 750px;
+                margin-top: 5px;
+            }
+            label {
+                font-size: 18px;
+            }
+            select, button {
+                width: 50%;
+                padding: 8px;
+                font-size: 16px;
+            }
+            button {
+                width: 30%;
+                margin-top: 30px;
+                font-size: 16px;
+            }
+            #result {
+                font-size: 18px;
+                margin-top: 30px;
+            }
+        }
+
+        /* Mobile styles */
+        @media (max-width: 767px) {
+            body {
+                background-color: #fff;
+            }
+            #container {
+                width: 90%;
+                margin-top: 20px;
+            }
+            label {
+                font-size: 16px;
+            }
+            select, button {
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+            }
+            button {
+                margin-top: 20px;
+                font-size: 16px;
+            }
+            #result {
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
@@ -165,8 +221,9 @@
         </select>
         <p></p>
 
-        <button onclick="calculateMood()">Calculate</button>
-        <p id="result"></p>
+        <button onclick="calculateMood()">Calculate Mood</button>
+        
+        <pre id="result"></pre>
     </div>
 
     <script>
@@ -181,32 +238,45 @@
 
             moodScore = (5 * moodScore) / 2;
 
-            let moodCategory = '';
+            let moodResult = '';
             if (moodScore >= 90) {
-                moodCategory = 'Extreme mood elevation';
+                moodResult = 'Extreme mood elevation';
             } else if (moodScore >= 80) {
-                moodCategory = 'Memorable mood elevation';
+                moodResult = 'Memorable mood elevation';
             } else if (moodScore >= 70) {
-                moodCategory = 'Substantial mood elevation';
+                moodResult = 'Substantial mood elevation';
             } else if (moodScore >= 60) {
-                moodCategory = 'Significant mood elevation';
+                moodResult = 'Significant mood elevation';
             } else if (moodScore >= 51) {
-                moodCategory = 'Slight mood elevation';
+                moodResult = 'Slight mood elevation';
             } else if (moodScore === 50) {
-                moodCategory = 'Ok (so-so)';
+                moodResult = 'Ok (so-so)';
             } else if (moodScore >= 40) {
-                moodCategory = 'Mildly depressed mood';
+                moodResult = 'Mildly depressed mood';
             } else if (moodScore >= 30) {
-                moodCategory = 'Moderately depressed mood';
+                moodResult = 'Moderately depressed mood';
             } else if (moodScore >= 20) {
-                moodCategory = 'Seriously depressed mood';
+                moodResult = 'Seriously depressed mood';
             } else if (moodScore >= 10) {
-                moodCategory = 'Severely depressed mood';
+                moodResult = 'Severely depressed mood';
             } else {
-                moodCategory = 'Extremely depressed mood';
+                moodResult = 'Extremely depressed mood';
             }
 
-            document.getElementById('result').textContent = `Your mood score is ${moodScore}. ${moodCategory}.`;
+            const currentDate = new Date();
+            const formattedDate = currentDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+            });
+            const formattedTime = currentDate.toLocaleTimeString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true,
+            });
+
+            document.getElementById('result').textContent = `${formattedDate} - ${formattedTime}: Your mood score is ${moodScore}. ${moodResult}.`;
+
         }
     </script>
 </body>
