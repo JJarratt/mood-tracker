@@ -35,6 +35,7 @@
             display: block;
             margin-bottom: 10px;
             font-size: 18px;
+            white-space: pre-line /* Keep centered after line break */
         }
 
         /* Styling for the select dropdowns and buttons */
@@ -258,7 +259,7 @@
                 hour12: true,
             });
 
-            document.getElementById('result').textContent = `\n${formattedDate} - ${formattedTime}:\nYour mood score is ${moodScore}.\n${moodResult}.`;
+            document.getElementById('result').textContent = `\n${formattedDate} - ${formattedTime}:\n\nYour mood score is ${moodScore}.\n${moodResult}.`;
 
             const resultElement = document.getElementById('result');
             resultElement.scrollIntoView({ behavior: 'smooth' });
@@ -267,3 +268,13 @@
     </script>
 </body>
 </html>
+
+
+On mobile the screen is so narrow that I see:
+
+How were your most recent
+interactions?
+
+Is there a way to ensure the text stays centered after a line break? something closer to:
+    How were your most recent
+         interactions?
