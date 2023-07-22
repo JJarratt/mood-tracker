@@ -2,11 +2,11 @@
 
 ## Project Description
 
-A website to evaluate mood based on a series of 10 questions.
+A website to evaluate your mood.
 
 ## Features
 
-- Presents a series of 10 mood questions and gets user responses.
+- 10 mood questions and responses.
 - Returns a mood score between 0-100.
 - Includes the date and time.
 
