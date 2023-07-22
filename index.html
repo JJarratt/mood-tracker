@@ -10,7 +10,7 @@
             height: 100vh;
             background-color: #000000; /* Set the background color for the page */
         }
-
+    
         /* Styling for the main container */
         #container {
             width: 90%;
@@ -23,37 +23,36 @@
             align-items: center; /* Center items horizontally */
             background-color: #87CEEB; /* Set the background color for the container */
         }
-
-        /* Styling for each question container */
-        .question-container {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
+    
         /* Styling for the questions */
         label {
             display: block;
             margin-bottom: 10px;
-            font-size: 18px;
+            font-size: 20px;
+            font-weight: 900;
             white-space: pre-line; /* Keep centered after line break */
             text-align: center; /* Center after line break */
         }
-
-        /* Styling for the select dropdowns and buttons */
-        select, button {
-            width: 50%;
-            padding: 12px;
-            font-size: 16px;
+    
+        /* Styling for dropdowns and buttons */
+        select {
+            width: auto;
+            min-width: 30%;
+            padding: 10px;
+            font-size: 18px;
             text-align: center; /* Center the text inside the drop-down menus */
+            margin-bottom: 10px;
         }
-
+   
         /* Styling for the calculate button */
         button {
-            width: 30%;
-            margin-top: 20px;
+            width: auto;
+            min-width: unset; /* Reset the min-width for the button */
+            margin-top: 30px;
+            padding: 10px;
             font-size: 18px;
         }
-
+  
         /* Styling for the results */
         #result {
             font-size: 18px;
@@ -62,10 +61,10 @@
             text-align: center;
         }
     </style>
-</head>
+</head>   
 <body>
     <div id="container">
-        <h1>Mood Tracker</h1>
+        <h1></h1>
         <label>How is your mood right now?</label>
         <select class="question">
             <option value="4.0">Great</option>
@@ -78,7 +77,6 @@
             <option value="0.5">Really bad</option>
             <option value="0.0">Terrible</option>
         </select>
-        <p></p>
 
         <label>Are you optimistic about the future?</label>
         <select class="question">
@@ -92,7 +90,6 @@
             <option value="0.5">No, not at all</option>
             <option value="0.0">No!!</option>
         </select>
-        <p></p>
 
         <label>Are you enthusiastic/excited?</label>
         <select class="question">
@@ -106,7 +103,6 @@
             <option value="0.5">No, not at all</option>
             <option value="0.0">No!!</option>
         </select>
-        <p></p>
 
         <label>Do you feel self-confident?</label>
         <select class="question">
@@ -120,7 +116,6 @@
             <option value="0.5">No, not at all</option>
             <option value="0.0">No!!</option>
         </select>
-        <p></p>
 
         <label>Do you feel intellectually stimulated?</label>
         <select class="question">
@@ -134,7 +129,6 @@
             <option value="0.5">No, not at all</option>
             <option value="0.0">No!!</option>
         </select>
-        <p></p>
 
         <label>How were your most recent interactions?</label>
         <select class="question">
@@ -148,7 +142,6 @@
             <option value="0.5">Really bad</option>
             <option value="0.0">Terrible</option>
         </select>
-        <p></p>
 
         <label>Have you been smiling/laughing?</label>
         <select class="question">
@@ -162,7 +155,6 @@
             <option value="0.5">No, not at all</option>
             <option value="0.0">No!!</option>
         </select>
-        <p></p>
 
         <label>Do you feel involved/engaged?</label>
         <select class="question">
@@ -176,7 +168,6 @@
             <option value="0.5">No, not at all</option>
             <option value="0.0">No!!</option>
         </select>
-        <p></p>
 
         <label>Do you feel relaxed?</label>
         <select class="question">
@@ -190,7 +181,6 @@
             <option value="0.5">No, not at all</option>
             <option value="0.0">No!!</option>
         </select>
-        <p></p>
 
         <label>Do you accept your current situation?</label>
         <select class="question">
@@ -204,7 +194,6 @@
             <option value="0.5">No, not at all</option>
             <option value="0.0">No!!</option>
         </select>
-        <p></p>
 
         <button onclick="calculateMood()">Calculate Mood</button>
         
