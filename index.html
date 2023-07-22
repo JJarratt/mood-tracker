@@ -4,31 +4,55 @@
     <title>Mood Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Apply styles to the entire page */
         body {
             font-family: Arial, sans-serif;
             height: 100vh;
+            background-color: #000000; /* Set the background color for the page */
         }
+
+        /* Styling for the main container */
         #container {
             width: 90%;
             margin: 0 auto;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            display: flex; /* Use flexbox layout */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center items horizontally */
+            background-color: #87CEEB; /* Set the background color for the container */
         }
+
+        /* Styling for each question container */
+        .question-container {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the question labels */
         label {
             display: block;
             margin-bottom: 10px;
             font-size: 18px;
         }
+
+        /* Styling for the select dropdowns and buttons */
         select, button {
-            width: 100%;
+            width: 40%;
             padding: 12px;
             font-size: 16px;
+            text-align: center; /* Center the text inside the drop-down menus */
         }
+
+        /* Styling specifically for the button */
         button {
+            width: 20%;
             margin-top: 20px;
             font-size: 18px;
         }
+
+        /* Styling for the result display */
         #result {
             font-size: 18px;
             font-weight: bold;
