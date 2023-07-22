@@ -2,7 +2,7 @@
 
 ## Project Description
 
-A website to evaluate your mood.
+A website to evaluate mood.
 
 ## Features
 
