@@ -2,8 +2,12 @@
 <html>
 <head>
     <title>Mood Tracker</title>
+    
+    <!-- Meta tag to set the viewport width and initial scale for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <style>
+        
         /* Apply styles to the entire page */
         body {
             font-family: Arial, sans-serif;
@@ -63,8 +67,12 @@
     </style>
 </head>   
 <body>
+    
+    <!-- Main container -->
     <div id="container">
         <h1></h1>
+
+        <!-- Question 1 -->
         <label>How is your mood right now?</label>
         <select class="question">
             <option value="4.0">Great</option>
@@ -78,6 +86,7 @@
             <option value="0.0">Terrible</option>
         </select>
 
+        <!-- Question 2 -->
         <label>Are you optimistic about the future?</label>
         <select class="question">
             <option value="4.0">Yes!!</option>
@@ -91,6 +100,7 @@
             <option value="0.0">No!!</option>
         </select>
 
+        <!-- Question 3 -->
         <label>Are you enthusiastic/excited?</label>
         <select class="question">
             <option value="4.0">Yes!!</option>
@@ -103,7 +113,8 @@
             <option value="0.5">No, not at all</option>
             <option value="0.0">No!!</option>
         </select>
-
+        
+        <!-- Question 4 -->
         <label>Do you feel self-confident?</label>
         <select class="question">
             <option value="4.0">Yes!!</option>
@@ -117,6 +128,7 @@
             <option value="0.0">No!!</option>
         </select>
 
+        <!-- Question 5 -->
         <label>Do you feel intellectually stimulated?</label>
         <select class="question">
             <option value="4.0">Yes!!</option>
@@ -130,6 +142,7 @@
             <option value="0.0">No!!</option>
         </select>
 
+        <!-- Question 6 -->
         <label>How were your most recent interactions?</label>
         <select class="question">
             <option value="4.0">Great</option>
@@ -143,6 +156,7 @@
             <option value="0.0">Terrible</option>
         </select>
 
+        <!-- Question 7 -->
         <label>Have you been smiling/laughing?</label>
         <select class="question">
             <option value="4.0">Yes!!</option>
@@ -156,6 +170,7 @@
             <option value="0.0">No!!</option>
         </select>
 
+        <!-- Question 8 -->
         <label>Do you feel involved/engaged?</label>
         <select class="question">
             <option value="4.0">Yes!!</option>
@@ -168,7 +183,8 @@
             <option value="0.5">No, not at all</option>
             <option value="0.0">No!!</option>
         </select>
-
+        
+        <!-- Question 9 -->
         <label>Do you feel relaxed?</label>
         <select class="question">
             <option value="4.0">Yes!!</option>
@@ -182,6 +198,7 @@
             <option value="0.0">No!!</option>
         </select>
 
+        <!-- Question 10 -->
         <label>Do you accept your current situation?</label>
         <select class="question">
             <option value="4.0">Yes!!</option>
@@ -194,67 +211,80 @@
             <option value="0.5">No, not at all</option>
             <option value="0.0">No!!</option>
         </select>
-
-        <button onclick="calculateMood()">Calculate Mood</button>
         
+        <!-- Calculate Mood button -->
+        <button onclick="calculateMood()">Calculate Mood</button>
+
+        <!-- Display the results -->
         <pre id="result"></pre>
     </div>
+    
+<script>
+    
+    // Function to calculate the mood based on user responses
+    function calculateMood() {
+        const questions = document.querySelectorAll('.question');
+        let moodScore = 0;
 
-    <script>
-        function calculateMood() {
-            const questions = document.querySelectorAll('.question');
-            let moodScore = 0;
+        // Loop through each question to calculate the mood score
+        questions.forEach(question => {
+            const score = parseFloat(question.value);
+            moodScore += score;
+        });
 
-            questions.forEach(question => {
-                const score = parseFloat(question.value);
-                moodScore += score;
-            });
+        // Calculate the final mood score
+        moodScore = (5 * moodScore) / 2;
 
-            moodScore = (5 * moodScore) / 2;
+        let moodResult = '';
 
-            let moodResult = '';
-            if (moodScore >= 90) {
-                moodResult = 'Extreme mood elevation';
-            } else if (moodScore >= 80) {
-                moodResult = 'Memorable mood elevation';
-            } else if (moodScore >= 70) {
-                moodResult = 'Substantial mood elevation';
-            } else if (moodScore >= 60) {
-                moodResult = 'Significant mood elevation';
-            } else if (moodScore >= 51) {
-                moodResult = 'Slight mood elevation';
-            } else if (moodScore === 50) {
-                moodResult = 'Ok (so-so)';
-            } else if (moodScore >= 40) {
-                moodResult = 'Mildly depressed mood';
-            } else if (moodScore >= 30) {
-                moodResult = 'Moderately depressed mood';
-            } else if (moodScore >= 20) {
-                moodResult = 'Seriously depressed mood';
-            } else if (moodScore >= 10) {
-                moodResult = 'Severely depressed mood';
-            } else {
-                moodResult = 'Extremely depressed mood';
-            }
-
-            const currentDate = new Date();
-            const formattedDate = currentDate.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit',
-            });
-            const formattedTime = currentDate.toLocaleTimeString('en-US', {
-                hour: 'numeric',
-                minute: 'numeric',
-                hour12: true,
-            });
-
-            document.getElementById('result').textContent = `\n${formattedDate} - ${formattedTime}:\n\nYour mood score is ${moodScore}.\n${moodResult}.`;
-
-            const resultElement = document.getElementById('result');
-            resultElement.scrollIntoView({ behavior: 'smooth' });
-
+        // Determine the mood result based on the mood score
+        if (moodScore >= 90) {
+            moodResult = 'Extreme mood elevation';
+        } else if (moodScore >= 80) {
+            moodResult = 'Memorable mood elevation';
+        } else if (moodScore >= 70) {
+            moodResult = 'Substantial mood elevation';
+        } else if (moodScore >= 60) {
+            moodResult = 'Significant mood elevation';
+        } else if (moodScore >= 51) {
+            moodResult = 'Slight mood elevation';
+        } else if (moodScore === 50) {
+            moodResult = 'Ok (so-so)';
+        } else if (moodScore >= 40) {
+            moodResult = 'Mildly depressed mood';
+        } else if (moodScore >= 30) {
+            moodResult = 'Moderately depressed mood';
+        } else if (moodScore >= 20) {
+            moodResult = 'Seriously depressed mood';
+        } else if (moodScore >= 10) {
+            moodResult = 'Severely depressed mood';
+        } else {
+            moodResult = 'Extremely depressed mood';
         }
-    </script>
+
+        // Get the current date
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+        });
+
+        // Get the current time
+        const formattedTime = currentDate.toLocaleTimeString('en-US', {
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true,
+        });
+
+        // Display the mood score and result
+        document.getElementById('result').textContent = `\n${formattedDate} - ${formattedTime}:\n\nYour mood score is ${moodScore}.\n${moodResult}.`;
+
+        // Scroll to the results section
+        const resultElement = document.getElementById('result');
+        resultElement.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
 </body>
 </html>
