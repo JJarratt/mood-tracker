@@ -76,6 +76,7 @@
         <!-- Question 1 -->
         <label>How is your mood right now?</label>
         <select class="question">
+            <option value="" disabled selected>-select-</option>
             <option value="4.0">Great</option>
             <option value="3.5">Really good</option>
             <option value="3.0">Good</option>
@@ -90,6 +91,7 @@
         <!-- Question 2 -->
         <label>Are you optimistic about the future?</label>
         <select class="question">
+            <option value="" disabled selected>-select-</option>
             <option value="4.0">Yes!!</option>
             <option value="3.5">Yes, very much</option>
             <option value="3.0">Yes</option>
@@ -104,6 +106,7 @@
         <!-- Question 3 -->
         <label>Are you enthusiastic/excited?</label>
         <select class="question">
+            <option value="" disabled selected>-select-</option>
             <option value="4.0">Yes!!</option>
             <option value="3.5">Yes, very much</option>
             <option value="3.0">Yes</option>
@@ -118,6 +121,7 @@
         <!-- Question 4 -->
         <label>Do you feel self-confident?</label>
         <select class="question">
+            <option value="" disabled selected>-select-</option>
             <option value="4.0">Yes!!</option>
             <option value="3.5">Yes, very much</option>
             <option value="3.0">Yes</option>
@@ -132,6 +136,7 @@
         <!-- Question 5 -->
         <label>Do you feel intellectually stimulated?</label>
         <select class="question">
+            <option value="" disabled selected>-select-</option>
             <option value="4.0">Yes!!</option>
             <option value="3.5">Yes, very much</option>
             <option value="3.0">Yes</option>
@@ -146,6 +151,7 @@
         <!-- Question 6 -->
         <label>How were your most recent interactions?</label>
         <select class="question">
+            <option value="" disabled selected>-select-</option>
             <option value="4.0">Great</option>
             <option value="3.5">Really good</option>
             <option value="3.0">Good</option>
@@ -160,6 +166,7 @@
         <!-- Question 7 -->
         <label>Have you been smiling/laughing?</label>
         <select class="question">
+            <option value="" disabled selected>-select-</option>
             <option value="4.0">Yes!!</option>
             <option value="3.5">Yes, very much</option>
             <option value="3.0">Yes</option>
@@ -174,6 +181,7 @@
         <!-- Question 8 -->
         <label>Do you feel involved/engaged?</label>
         <select class="question">
+            <option value="" disabled selected>-select-</option>
             <option value="4.0">Yes!!</option>
             <option value="3.5">Yes, very much</option>
             <option value="3.0">Yes</option>
@@ -188,6 +196,7 @@
         <!-- Question 9 -->
         <label>Do you feel relaxed?</label>
         <select class="question">
+            <option value="" disabled selected>-select-</option>
             <option value="4.0">Yes!!</option>
             <option value="3.5">Yes, very much</option>
             <option value="3.0">Yes</option>
@@ -202,6 +211,7 @@
         <!-- Question 10 -->
         <label>Do you accept your current situation?</label>
         <select class="question">
+            <option value="" disabled selected>-select-</option>
             <option value="4.0">Yes!!</option>
             <option value="3.5">Yes, very much</option>
             <option value="3.0">Yes</option>
@@ -221,20 +231,62 @@
     </div>
     
 <script>
-    
+
+    // Store responses in variables
+    let q1_response = 0;
+    let q2_response = 0;
+    let q3_response = 0;
+    let q4_response = 0;
+    let q5_response = 0;
+    let q6_response = 0;
+    let q7_response = 0;
+    let q8_response = 0;
+    let q9_response = 0;
+    let q10_response = 0;
+
+    // Function to update the mood score when a question is answered
+    function updateMoodScore() {
+        const questions = document.querySelectorAll('.question');
+        q1_response = parseFloat(questions[0].value);
+        q2_response = parseFloat(questions[1].value);
+        q3_response = parseFloat(questions[2].value);
+        q4_response = parseFloat(questions[3].value);
+        q5_response = parseFloat(questions[4].value);
+        q6_response = parseFloat(questions[5].value);
+        q7_response = parseFloat(questions[6].value);
+        q8_response = parseFloat(questions[7].value);
+        q9_response = parseFloat(questions[8].value);
+        q10_response = parseFloat(questions[9].value);
+    }
+
+    // Add event listeners to each select element to update the mood score when a question is answered
+    const selectElements = document.querySelectorAll('.question');
+    selectElements.forEach(select => {
+        select.addEventListener('change', updateMoodScore);
+    });
+
     // Function to calculate the mood based on user responses
     function calculateMood() {
-        const questions = document.querySelectorAll('.question');
-        let moodScore = 0;
 
-        // Loop through each question to calculate the mood score
-        questions.forEach(question => {
-            const score = parseFloat(question.value);
-            moodScore += score;
-        });
+        // Reset the content of the result element
+        document.getElementById('result').textContent = "";
 
-        // Calculate the final mood score
+        // Get mood score from individual responses
+        let moodScore = q1_response + q2_response + q3_response + q4_response + q5_response + q6_response + q7_response + q8_response + q9_response + q10_response;
+
+        // Calculate the mood score
         moodScore = (5 * moodScore) / 2;
+        
+        // Round the mood score
+        let roundedMoodScore = Math.round(moodScore);
+
+        // Calculate the Juice: sum of mood questions associated with increased mania
+        let juice = 0;
+        juice = q1_response + q2_response + q3_response + q4_response + q5_response; // default juice
+
+        // Calculate the Base: sum of mood questions associated with decreased mania
+        let base = 0;
+        base = q6_response + q7_response + q8_response + q9_response + q10_response; // default base
 
         let moodResult = '';
 
@@ -252,15 +304,15 @@
         } else if (moodScore === 50) {
             moodResult = 'Ok (so-so)';
         } else if (moodScore >= 40) {
-            moodResult = 'Mildly depressed mood';
+            moodResult = 'Mildly low mood';
         } else if (moodScore >= 30) {
-            moodResult = 'Moderately depressed mood';
+            moodResult = 'Moderately low mood';
         } else if (moodScore >= 20) {
-            moodResult = 'Seriously depressed mood';
+            moodResult = 'Seriously low mood';
         } else if (moodScore >= 10) {
-            moodResult = 'Severely depressed mood';
+            moodResult = 'Severely low mood';
         } else {
-            moodResult = 'Extremely depressed mood';
+            moodResult = 'Extremely low mood';
         }
 
         // Get the current date
@@ -279,7 +331,14 @@
         });
 
         // Display the mood score and result
-        document.getElementById('result').textContent = `\n${formattedDate} - ${formattedTime}:\n\nYour mood score is ${moodScore}.\n${moodResult}.`;
+        document.getElementById('result').textContent += `\n${formattedDate} - ${formattedTime}:\n`;
+        document.getElementById('result').textContent += `\nYour mood score is ${roundedMoodScore}.`;
+        document.getElementById('result').textContent += `\n${moodResult}.`;
+        //document.getElementById('result').textContent += `\n\nJuice (1-5): ${juice}.`;
+        //document.getElementById('result').textContent += `\nBase (6-10): ${base}.`;
+
+        // DISCLAIMER
+        document.getElementById('result').textContent += `\n\nNOT MEDICAL ADVICE`;
 
         // Scroll to the results section
         const resultElement = document.getElementById('result');
