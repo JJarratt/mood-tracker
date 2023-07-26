@@ -27,12 +27,21 @@
             align-items: center; /* Center items horizontally */
             background-color: #87CEEB; /* Set the background color for the container */
         }
+
+        /* Styling for question containers */
+        .question-container {
+            width: 100%;
+            padding: 40px; /* Adjust the spacing between questions by changing this value */
+            display: flex; /* Use flexbox layout */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center items horizontally */
+        }
     
         /* Styling for the questions */
         label {
             display: block;
-            margin-bottom: 20px;
-            font-size: 20px;
+            margin-bottom: 24px;
+            font-size: 24px;
             font-weight: 900;
             white-space: pre-line; /* Keep centered after line break */
             text-align: center; /* Center after line break */
@@ -44,20 +53,19 @@
             padding: 10px;
             font-size: 18px;
             text-align: center; /* Center the text inside the drop-down menus */
-            margin-bottom: 100px;
         }
    
         /* Styling for the calculate button */
         button {
             width: auto;
-            margin-top: 0px;
+            margin-top: 75px;
             padding: 10px;
             font-size: 18px;
         }
   
         /* Styling for the results */
         #result {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             margin-top: 20px;
             margin-bottom: 1000px;
@@ -73,155 +81,175 @@
         <h1></h1>
 
         <!-- Question 1 -->
-        <label>How is your mood right now?</label>
-        <select class="question">
-            <option value="" disabled selected>-select-</option>
-            <option value="4.0">Great</option>
-            <option value="3.5">Really good</option>
-            <option value="3.0">Good</option>
-            <option value="2.5">Pretty good</option>
-            <option value="2.0">Ok</option>
-            <option value="1.5">Not great</option>
-            <option value="1.0">Bad</option>
-            <option value="0.5">Really bad</option>
-            <option value="0.0">Terrible</option>
-        </select>
+        <div class="question-container">
+            <label>How is your mood right now?</label>
+            <select class="question">
+                <option value="" disabled selected>-select-</option>
+                <option value="4.0">Great</option>
+                <option value="3.5">Really good</option>
+                <option value="3.0">Good</option>
+                <option value="2.5">Pretty good</option>
+                <option value="2.0">Ok</option>
+                <option value="1.5">Not great</option>
+                <option value="1.0">Bad</option>
+                <option value="0.5">Really bad</option>
+                <option value="0.0">Terrible</option>
+            </select>
+        </div>
 
         <!-- Question 2 -->
-        <label>Are you optimistic about the future?</label>
-        <select class="question">
-            <option value="" disabled selected>-select-</option>
-            <option value="4.0">Yes!!</option>
-            <option value="3.5">Yes, very much</option>
-            <option value="3.0">Yes</option>
-            <option value="2.5">Yes, somewhat</option>
-            <option value="2.0">So-so (ok, neutral)</option>
-            <option value="1.5">No, not really</option>
-            <option value="1.0">No</option>
-            <option value="0.5">No, not at all</option>
-            <option value="0.0">No!!</option>
-        </select>
+        <div class="question-container">
+            <label>Are you optimistic about the future?</label>
+            <select class="question">
+                <option value="" disabled selected>-select-</option>
+                <option value="4.0">Yes!!</option>
+                <option value="3.5">Yes, very much</option>
+                <option value="3.0">Yes</option>
+                <option value="2.5">Yes, somewhat</option>
+                <option value="2.0">So-so (ok, neutral)</option>
+                <option value="1.5">No, not really</option>
+                <option value="1.0">No</option>
+                <option value="0.5">No, not at all</option>
+                <option value="0.0">No!!</option>
+            </select>
+        </div>
 
         <!-- Question 3 -->
-        <label>Are you enthusiastic/excited?</label>
-        <select class="question">
-            <option value="" disabled selected>-select-</option>
-            <option value="4.0">Yes!!</option>
-            <option value="3.5">Yes, very much</option>
-            <option value="3.0">Yes</option>
-            <option value="2.5">Yes, somewhat</option>
-            <option value="2.0">So-so (ok, neutral)</option>
-            <option value="1.5">No, not really</option>
-            <option value="1.0">No</option>
-            <option value="0.5">No, not at all</option>
-            <option value="0.0">No!!</option>
-        </select>
-        
+        <div class="question-container">
+            <label>Are you enthusiastic/excited?</label>
+            <select class="question">
+                <option value="" disabled selected>-select-</option>
+                <option value="4.0">Yes!!</option>
+                <option value="3.5">Yes, very much</option>
+                <option value="3.0">Yes</option>
+                <option value="2.5">Yes, somewhat</option>
+                <option value="2.0">So-so (ok, neutral)</option>
+                <option value="1.5">No, not really</option>
+                <option value="1.0">No</option>
+                <option value="0.5">No, not at all</option>
+                <option value="0.0">No!!</option>
+            </select>
+        </div>
+
         <!-- Question 4 -->
-        <label>Do you feel self-confident?</label>
-        <select class="question">
-            <option value="" disabled selected>-select-</option>
-            <option value="4.0">Yes!!</option>
-            <option value="3.5">Yes, very much</option>
-            <option value="3.0">Yes</option>
-            <option value="2.5">Yes, somewhat</option>
-            <option value="2.0">So-so (ok, neutral)</option>
-            <option value="1.5">No, not really</option>
-            <option value="1.0">No</option>
-            <option value="0.5">No, not at all</option>
-            <option value="0.0">No!!</option>
-        </select>
+        <div class="question-container">
+            <label>Do you feel self-confident?</label>
+            <select class="question">
+                <option value="" disabled selected>-select-</option>
+                <option value="4.0">Yes!!</option>
+                <option value="3.5">Yes, very much</option>
+                <option value="3.0">Yes</option>
+                <option value="2.5">Yes, somewhat</option>
+                <option value="2.0">So-so (ok, neutral)</option>
+                <option value="1.5">No, not really</option>
+                <option value="1.0">No</option>
+                <option value="0.5">No, not at all</option>
+                <option value="0.0">No!!</option>
+            </select>
+        </div>
 
         <!-- Question 5 -->
-        <label>Do you feel intellectually stimulated?</label>
-        <select class="question">
-            <option value="" disabled selected>-select-</option>
-            <option value="4.0">Yes!!</option>
-            <option value="3.5">Yes, very much</option>
-            <option value="3.0">Yes</option>
-            <option value="2.5">Yes, somewhat</option>
-            <option value="2.0">So-so (ok, neutral)</option>
-            <option value="1.5">No, not really</option>
-            <option value="1.0">No</option>
-            <option value="0.5">No, not at all</option>
-            <option value="0.0">No!!</option>
-        </select>
+        <div class="question-container">
+            <label>Do you feel intellectually stimulated?</label>
+            <select class="question">
+                <option value="" disabled selected>-select-</option>
+                <option value="4.0">Yes!!</option>
+                <option value="3.5">Yes, very much</option>
+                <option value="3.0">Yes</option>
+                <option value="2.5">Yes, somewhat</option>
+                <option value="2.0">So-so (ok, neutral)</option>
+                <option value="1.5">No, not really</option>
+                <option value="1.0">No</option>
+                <option value="0.5">No, not at all</option>
+                <option value="0.0">No!!</option>
+            </select>
+        </div>
 
         <!-- Question 6 -->
-        <label>How were your most recent interactions?</label>
-        <select class="question">
-            <option value="" disabled selected>-select-</option>
-            <option value="4.0">Great</option>
-            <option value="3.5">Really good</option>
-            <option value="3.0">Good</option>
-            <option value="2.5">Pretty good</option>
-            <option value="2.0">Ok</option>
-            <option value="1.5">Not great</option>
-            <option value="1.0">Bad</option>
-            <option value="0.5">Really bad</option>
-            <option value="0.0">Terrible</option>
-        </select>
+        <div class="question-container">
+            <label>How were your most recent interactions?</label>
+            <select class="question">
+                <option value="" disabled selected>-select-</option>
+                <option value="4.0">Great</option>
+                <option value="3.5">Really good</option>
+                <option value="3.0">Good</option>
+                <option value="2.5">Pretty good</option>
+                <option value="2.0">Ok</option>
+                <option value="1.5">Not great</option>
+                <option value="1.0">Bad</option>
+                <option value="0.5">Really bad</option>
+                <option value="0.0">Terrible</option>
+            </select>
+        </div>
 
         <!-- Question 7 -->
-        <label>Have you been smiling/laughing?</label>
-        <select class="question">
-            <option value="" disabled selected>-select-</option>
-            <option value="4.0">Yes!!</option>
-            <option value="3.5">Yes, very much</option>
-            <option value="3.0">Yes</option>
-            <option value="2.5">Yes, somewhat</option>
-            <option value="2.0">So-so (ok, neutral)</option>
-            <option value="1.5">No, not really</option>
-            <option value="1.0">No</option>
-            <option value="0.5">No, not at all</option>
-            <option value="0.0">No!!</option>
-        </select>
+        <div class="question-container">
+            <label>Have you been smiling/laughing?</label>
+            <select class="question">
+                <option value="" disabled selected>-select-</option>
+                <option value="4.0">Yes!!</option>
+                <option value="3.5">Yes, very much</option>
+                <option value="3.0">Yes</option>
+                <option value="2.5">Yes, somewhat</option>
+                <option value="2.0">So-so (ok, neutral)</option>
+                <option value="1.5">No, not really</option>
+                <option value="1.0">No</option>
+                <option value="0.5">No, not at all</option>
+                <option value="0.0">No!!</option>
+            </select>
+        </div>
 
         <!-- Question 8 -->
-        <label>Do you feel involved/engaged?</label>
-        <select class="question">
-            <option value="" disabled selected>-select-</option>
-            <option value="4.0">Yes!!</option>
-            <option value="3.5">Yes, very much</option>
-            <option value="3.0">Yes</option>
-            <option value="2.5">Yes, somewhat</option>
-            <option value="2.0">So-so (ok, neutral)</option>
-            <option value="1.5">No, not really</option>
-            <option value="1.0">No</option>
-            <option value="0.5">No, not at all</option>
-            <option value="0.0">No!!</option>
-        </select>
-        
+        <div class="question-container">
+            <label>Do you feel involved/engaged?</label>
+            <select class="question">
+                <option value="" disabled selected>-select-</option>
+                <option value="4.0">Yes!!</option>
+                <option value="3.5">Yes, very much</option>
+                <option value="3.0">Yes</option>
+                <option value="2.5">Yes, somewhat</option>
+                <option value="2.0">So-so (ok, neutral)</option>
+                <option value="1.5">No, not really</option>
+                <option value="1.0">No</option>
+                <option value="0.5">No, not at all</option>
+                <option value="0.0">No!!</option>
+            </select>
+        </div>
+
         <!-- Question 9 -->
-        <label>Do you feel relaxed?</label>
-        <select class="question">
-            <option value="" disabled selected>-select-</option>
-            <option value="4.0">Yes!!</option>
-            <option value="3.5">Yes, very much</option>
-            <option value="3.0">Yes</option>
-            <option value="2.5">Yes, somewhat</option>
-            <option value="2.0">So-so (ok, neutral)</option>
-            <option value="1.5">No, not really</option>
-            <option value="1.0">No</option>
-            <option value="0.5">No, not at all</option>
-            <option value="0.0">No!!</option>
-        </select>
+        <div class="question-container">
+            <label>Do you feel relaxed?</label>
+            <select class="question">
+                <option value="" disabled selected>-select-</option>
+                <option value="4.0">Yes!!</option>
+                <option value="3.5">Yes, very much</option>
+                <option value="3.0">Yes</option>
+                <option value="2.5">Yes, somewhat</option>
+                <option value="2.0">So-so (ok, neutral)</option>
+                <option value="1.5">No, not really</option>
+                <option value="1.0">No</option>
+                <option value="0.5">No, not at all</option>
+                <option value="0.0">No!!</option>
+            </select>
+        </div>
 
         <!-- Question 10 -->
-        <label>Do you accept your current situation?</label>
-        <select class="question">
-            <option value="" disabled selected>-select-</option>
-            <option value="4.0">Yes!!</option>
-            <option value="3.5">Yes, very much</option>
-            <option value="3.0">Yes</option>
-            <option value="2.5">Yes, somewhat</option>
-            <option value="2.0">So-so (ok, neutral)</option>
-            <option value="1.5">No, not really</option>
-            <option value="1.0">No</option>
-            <option value="0.5">No, not at all</option>
-            <option value="0.0">No!!</option>
-        </select>
-        
+        <div class="question-container">
+            <label>Do you accept your current situation?</label>
+            <select class="question">
+                <option value="" disabled selected>-select-</option>
+                <option value="4.0">Yes!!</option>
+                <option value="3.5">Yes, very much</option>
+                <option value="3.0">Yes</option>
+                <option value="2.5">Yes, somewhat</option>
+                <option value="2.0">So-so (ok, neutral)</option>
+                <option value="1.5">No, not really</option>
+                <option value="1.0">No</option>
+                <option value="0.5">No, not at all</option>
+                <option value="0.0">No!!</option>
+            </select>
+        </div>
+
         <!-- Calculate Mood button -->
         <button onclick="calculateMood()">Calculate Mood</button>
 
