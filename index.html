@@ -271,19 +271,20 @@
     let q9_response = 0;
     let q10_response = 0;
 
-    // Function to scroll to the next question after the current question is answered
-    function scrollToNextQuestion(event) {
-        const questions = document.querySelectorAll('.question-container');
-        const currentQuestion = event.target.closest('.question-container');
-        const currentIndex = Array.from(questions).indexOf(currentQuestion);
-        const nextIndex = currentIndex + 1;
+// Function to scroll to the next question after the current question is answered
+function scrollToNextQuestion(event) {
+    const questions = document.querySelectorAll('.question-container');
+    const currentQuestion = event.target.closest('.question-container');
+    const currentIndex = Array.from(questions).indexOf(currentQuestion);
+    const nextIndex = currentIndex + 1;
 
     // Scroll to the next question or the calculate button
     const nextQuestion = questions[nextIndex];
+    const isLastQuestion = nextIndex === questions.length;
     const targetElement = nextQuestion || document.getElementById('calc-button');
 
-    // Adjust the scroll position to be a little higher (e.g., 50 pixels) than the top of the target element
-    const offset = -50;
+    // Adjust the scroll position to be a little higher (e.g., 50 pixels) for the last question only
+    const offset = isLastQuestion ? -50 : 0;
     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + offset;
 
     // Scroll to the adjusted position
