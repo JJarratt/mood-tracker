@@ -251,7 +251,7 @@
         </div>
 
         <!-- Calculate Mood button -->
-        <button onclick="calculateMood()">Calculate Mood</button>
+        <button id="calc-button" onclick="calculateMood()">Calculate Mood</button>
 
         <!-- Display the results -->
         <pre id="result"></pre>
@@ -271,6 +271,19 @@
     let q9_response = 0;
     let q10_response = 0;
 
+    // Function to scroll to the next question after the current question is answered
+    function scrollToNextQuestion(event) {
+        const questions = document.querySelectorAll('.question-container');
+        const currentQuestion = event.target.closest('.question-container');
+        const currentIndex = Array.from(questions).indexOf(currentQuestion);
+        const nextIndex = currentIndex + 1;
+
+        // Scroll to the next question or the calculate button
+        const nextQuestion = questions[nextIndex];
+        const targetElement = nextQuestion || document.getElementById('calc-button');
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+    }
+
     // Function to update the mood score when a question is answered
     function updateMoodScore() {
         const questions = document.querySelectorAll('.question');
@@ -284,6 +297,9 @@
         q8_response = parseFloat(questions[7].value);
         q9_response = parseFloat(questions[8].value);
         q10_response = parseFloat(questions[9].value);
+
+        // Scroll to the next question after the current question is answered
+        scrollToNextQuestion(event);
     }
 
     // Add event listeners to each select element to update the mood score when a question is answered
@@ -357,9 +373,11 @@
             hour12: true,
         });
 
-        // Display the mood score and result
+        // Date and time
         document.getElementById('result').textContent += `\n${formattedDate} - ${formattedTime}:\n`;
         document.getElementById('result').textContent += `\n\n\n\n\n\n\n\n`;
+
+        // Mood results
         document.getElementById('result').textContent += `Your mood score is ${roundedMoodScore}.\n`;
         document.getElementById('result').textContent += `${moodResult}.\n`;
         //document.getElementById('result').textContent += `\n\nJuice (1-5): ${juice}.`;
