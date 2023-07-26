@@ -58,7 +58,7 @@
         /* Styling for the calculate button */
         button {
             width: auto;
-            margin-top: 75px;
+            margin-top: 100px;
             padding: 10px;
             font-size: 18px;
         }
@@ -278,11 +278,17 @@
         const currentIndex = Array.from(questions).indexOf(currentQuestion);
         const nextIndex = currentIndex + 1;
 
-        // Scroll to the next question or the calculate button
-        const nextQuestion = questions[nextIndex];
-        const targetElement = nextQuestion || document.getElementById('calc-button');
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
-    }
+    // Scroll to the next question or the calculate button
+    const nextQuestion = questions[nextIndex];
+    const targetElement = nextQuestion || document.getElementById('calc-button');
+
+    // Adjust the scroll position to be a little higher (e.g., 50 pixels) than the top of the target element
+    const offset = -50;
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + offset;
+
+    // Scroll to the adjusted position
+    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+}
 
     // Function to update the mood score when a question is answered
     function updateMoodScore() {
@@ -374,9 +380,8 @@
         });
 
         // Date and time
-        document.getElementById('result').textContent += `\n${formattedDate} - ${formattedTime}:\n`;
         document.getElementById('result').textContent += `\n\n\n\n\n\n\n\n`;
-
+        document.getElementById('result').textContent += `${formattedDate} - ${formattedTime}:\n\n`;
         // Mood results
         document.getElementById('result').textContent += `Your mood score is ${roundedMoodScore}.\n`;
         document.getElementById('result').textContent += `${moodResult}.\n`;
