@@ -120,7 +120,7 @@ function calculateMood() {
     });
 
     // Date and time
-    document.getElementById('result').textContent += `${formattedDate}\n`;
+    document.getElementById('result').textContent += `\n${formattedDate}\n`;
     document.getElementById('result').textContent += `${formattedTime}\n\n\n\n`;
 
     // Mood results
@@ -130,7 +130,7 @@ function calculateMood() {
     //document.getElementById('result').textContent += `\nBase (6-10): ${base}.`;
 
     // DISCLAIMER
-    document.getElementById('result').textContent += `\n\n\n\n\n\n`;
+    document.getElementById('result').textContent += `\n\n\n\n\n`;
     document.getElementById('result').textContent += `NOT MEDICAL ADVICE`;
 
     // Scroll to the results section
