@@ -48,10 +48,9 @@ select {
     border-radius: 10px;
 }
 
-/* Styling for the calculate button */
+/* Styling for the calculate and reset buttons */
 button {
     width: auto;
-    margin-top: 100px;
     padding: 20px;
     font-size: 20px;
     border-radius: 10px;
@@ -62,6 +61,6 @@ button {
     font-size: 20px;
     font-weight: bold;
     margin-top: 20px;
-    margin-bottom: 1000px;
+    margin-bottom: 20px;
     text-align: center;
 }

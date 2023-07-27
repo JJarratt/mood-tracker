@@ -136,3 +136,17 @@ function calculateMood() {
     const resultElement = document.getElementById('result');
     resultElement.scrollIntoView({ behavior: 'smooth' });
 }
+
+function resetForm() {
+    // Get all select elements and set their value to the initial "disabled" option
+    const selectElements = document.querySelectorAll('.question');
+    selectElements.forEach(select => {
+        select.value = select.querySelector('option[selected]').value;
+    });
+
+    // Reset the results section
+    document.getElementById('result').textContent = "";
+
+    // Scroll back to the top of the form after resetting
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
