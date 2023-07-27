@@ -58,6 +58,7 @@ button {
 
 /* Styling for the results */
 #result {
+    font-family: 'Montserrat', Arial, sans-serif;
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 20px;

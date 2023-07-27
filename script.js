@@ -121,7 +121,9 @@ function calculateMood() {
 
     // Date and time
     document.getElementById('result').textContent += `\n\n\n\n\n\n\n\n`;
-    document.getElementById('result').textContent += `${formattedDate} - ${formattedTime}:\n\n`;
+    document.getElementById('result').textContent += `${formattedDate}`;
+    document.getElementById('result').textContent += `${formattedTime}:\n\n`;
+
     // Mood results
     document.getElementById('result').textContent += `Your mood score is ${roundedMoodScore}.\n`;
     document.getElementById('result').textContent += `${moodResult}.\n`;
