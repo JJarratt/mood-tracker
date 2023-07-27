@@ -22,9 +22,9 @@ function scrollToNextQuestion(event) {
     const isLastQuestion = nextIndex === questions.length;
     const targetElement = nextQuestion || document.getElementById('calc-button');
 
-    // Adjust the scroll position to be a little higher for the last question only
+    // Adjust the scroll position to be a little higher (e.g., 50 pixels) for the last question only
     const offset = isLastQuestion ? -300 : 0;
-    const targetPosition = targetElement.getBoundingClientRect().top;
+    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + offset;
 
     // Scroll to the adjusted position
     window.scrollTo({ top: targetPosition, behavior: 'smooth' });
@@ -120,12 +120,13 @@ function calculateMood() {
     });
 
     // Date and time
-    document.getElementById('result').textContent += `\n${formattedDate}\n`;
-    document.getElementById('result').textContent += `${formattedTime}\n\n`;
+    document.getElementById('result').textContent += `\n\n\n\n`;
+    document.getElementById('result').textContent += `${formattedDate}\n`;
+    document.getElementById('result').textContent += `${formattedTime}:\n\n`;
 
     // Mood results
-    document.getElementById('result').textContent += `Your mood score is ${roundedMoodScore}\n`;
-    document.getElementById('result').textContent += `${moodResult}`;
+    document.getElementById('result').textContent += `Your mood score is ${roundedMoodScore}.\n`;
+    document.getElementById('result').textContent += `${moodResult}.`;
     //document.getElementById('result').textContent += `\n\nJuice (1-5): ${juice}.`;
     //document.getElementById('result').textContent += `\nBase (6-10): ${base}.`;
 
