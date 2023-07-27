@@ -21,7 +21,7 @@ body {
 /* Styling for question containers */
 .question-container {
     width: 100%;
-    padding: 40px; /* Adjust the spacing between questions by changing this value */
+    padding: 20px; /* Adjust the spacing between questions by changing this value */
     display: flex; /* Use flexbox layout */
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center items horizontally */
@@ -30,7 +30,8 @@ body {
 /* Styling for the questions */
 label {
     display: block;
-    margin-bottom: 24px;
+    margin-top: 40px;
+    margin-bottom: 120px;
     font-size: 24px;
     font-weight: 900;
     white-space: pre-line; /* Keep centered after line break */
@@ -39,6 +40,7 @@ label {
 
 /* Styling for dropdowns and buttons */
 select {
+    margin-bottom: 400px;
     width: 250px;
     padding: 10px;
     font-size: 18px;
