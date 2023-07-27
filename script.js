@@ -23,7 +23,7 @@ function scrollToNextQuestion(event) {
     const targetElement = nextQuestion || document.getElementById('calc-button');
 
     // Adjust the scroll position to be a little higher (e.g., 50 pixels) for the last question only
-    const offset = isLastQuestion ? -50 : 0;
+    const offset = isLastQuestion ? -300 : 0;
     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset + offset;
 
     // Scroll to the adjusted position
