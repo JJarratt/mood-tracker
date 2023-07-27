@@ -12,4 +12,4 @@ A tool to evaluate mood.
 
 ## Acknowledgements
 
-Mood questions, respones, and mood score formula by Ben Wheatley.
+Mood questions, responses, and mood score formula by Ben Wheatley.
