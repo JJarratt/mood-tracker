@@ -25,7 +25,7 @@ function scrollToNextQuestion(event) {
     // Adjust the scroll position to be a little higher for the last question only
     const offset = isLastQuestion ? -300 : 0;
     const targetPosition = targetElement.getBoundingClientRect().top;
-   
+
     // Scroll to the adjusted position
     window.scrollTo({ top: targetPosition, behavior: 'smooth' });
 }
