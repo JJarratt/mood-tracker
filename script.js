@@ -11,11 +11,9 @@ let q9_response = 0;
 let q10_response = 0;
 
 // Function to scroll to the next question after the current question is answered
-function scrollToNextQuestion(event) {
+function scrollToNextQuestion(currentQuestionIndex) {
     const questions = document.querySelectorAll('.question-container');
-    const currentQuestion = event.target.closest('.question-container');
-    const currentIndex = Array.from(questions).indexOf(currentQuestion);
-    const nextIndex = currentIndex + 1;
+    const nextIndex = currentQuestionIndex + 1;
 
     // Scroll to the next question or the calculate button
     const nextQuestion = questions[nextIndex];
@@ -44,8 +42,12 @@ function updateMoodScore() {
     q9_response = parseFloat(questions[8].value);
     q10_response = parseFloat(questions[9].value);
 
+
+    // Get the index of the current question being answered
+    const currentQuestionIndex = Array.from(questions).indexOf(this);
+
     // Scroll to the next question after the current question is answered
-    scrollToNextQuestion(event);
+    scrollToNextQuestion(currentQuestionIndex);
 }
 
 // Add event listeners to each select element to update the mood score when a question is answered
