@@ -59,5 +59,75 @@ function calculateMood() {
   // Calculate the Base: sum of mood questions associated with decreased mania
   let base = responses.slice(5).reduce((acc, response) => acc + response, 0);
 
-  // ... (remaining code remains unchanged)
+  let moodResult = '';
+
+  // Determine the mood result based on the mood score
+  if (moodScore >= 90) {
+    moodResult = 'Extreme mood elevation';
+  } else if (moodScore >= 80) {
+    moodResult = 'Memorable mood elevation';
+  } else if (moodScore >= 70) {
+    moodResult = 'Substantial mood elevation';
+  } else if (moodScore >= 60) {
+    moodResult = 'Significant mood elevation';
+  } else if (moodScore >= 51) {
+    moodResult = 'Slight mood elevation';
+  } else if (moodScore === 50) {
+    moodResult = 'Ok (so-so)';
+  } else if (moodScore >= 40) {
+    moodResult = 'Mildly low mood';
+  } else if (moodScore >= 30) {
+    moodResult = 'Moderately low mood';
+  } else if (moodScore >= 20) {
+    moodResult = 'Seriously low mood';
+  } else if (moodScore >= 10) {
+    moodResult = 'Severely low mood';
+  } else {
+    moodResult = 'Extremely low mood';
+  }
+
+  // Get the current date
+  const currentDate = new Date();
+  const formattedDate = currentDate.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  });
+
+  // Get the current time
+  const formattedTime = currentDate.toLocaleTimeString('en-US', {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+  });
+
+  // Date and time
+  document.getElementById('result').textContent += `\n${formattedDate}\n`;
+  document.getElementById('result').textContent += `${formattedTime}\n\n\n\n`;
+
+  // Mood results
+  document.getElementById('result').textContent += `Your mood score is ${roundedMoodScore}\n`;
+  document.getElementById('result').textContent += `${moodResult}`;
+
+  // DISCLAIMER
+  document.getElementById('result').textContent += `\n\n\n\n\n`;
+  document.getElementById('result').textContent += `NOT MEDICAL ADVICE`;
+
+  // Scroll to the results section
+  const resultElement = document.getElementById('result');
+  resultElement.scrollIntoView({ behavior: 'smooth' });
+}
+
+function resetForm() {
+  // Get all select elements and set their value to the initial "disabled" option
+  const selectElements = document.querySelectorAll('.question');
+  selectElements.forEach(select => {
+    select.value = select.querySelector('option[selected]').value;
+  });
+
+  // Reset the results section
+  document.getElementById('result').textContent = "";
+
+  // Scroll back to the top of the form after resetting
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
