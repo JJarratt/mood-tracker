@@ -53,7 +53,7 @@ function updateMoodScore() {
 // Add event listeners to each select element to update the mood score when a question is answered
 const selectElements = document.querySelectorAll('.question');
 selectElements.forEach(select => {
-    select.addEventListener('change', updateMoodScore);
+  select.addEventListener('change', updateMoodScore);
 });
 
 // Function to calculate the mood based on user responses
