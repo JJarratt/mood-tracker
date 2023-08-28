@@ -34,7 +34,7 @@ Through trial and error, I established weights for each of these queries. Over t
 
 However, it wasn't just the output that proved helpful; the process of inputting the data was also beneficial. The system forced me to monitor my own thought processes. I became acutely aware of my own manic thinking and took steps to counteract it. This process of self-regulation allowed me to reduce the frequency of manic episodes, subsequently decreasing the number of emergency room visits and psychiatric hospitalizations I had to endure (at great expense to myself and the healthcare system).
 
-## On Existing Mood Tracking Systems
+## Existing Mood Tracking Systems
 
 There is no shortage of mood tracking systems available on the market today. Apple’s App Store is filled with mood tracking apps. However, based on my experience, these systems are not particularly effective. One common issue is the lack of distinction between mood and mania level. They assume that an improved mood signifies increasing instability of mania. For example, one system equates a "somewhat elevated mood" with being "more talkative than usual and sometimes experiencing confusion or rapid thoughts." A “very elevated mood" corresponds with "impaired judgment, out-of-character behavior, and reduced need for sleep." According to this system, the elevated mood I experienced when my son was born would be considered unhealthy.
 
