@@ -18,7 +18,7 @@ A tool to evaluate mood.
 
 Mood questions, responses, and mood score formula by Ben Wheatley.
 
-## Overview from the creator
+## An Overview From Track's Creator
 
 My name is Ben Wheatley, and I was diagnosed with bipolar disorder in 1998. From 2001 to 2008, I was hospitalized for mania at an average rate of almost once per year (7 times in 8 years)—including one month-long hospitalization. In response, I developed a mood tracking system from scratch that was designed to help me monitor my condition and promote self-regulation. I've used the system three times a day for many years, significantly reducing both my emergency room visits and my rate of psychiatric hospitalization.
 
