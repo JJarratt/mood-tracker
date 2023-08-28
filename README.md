@@ -44,7 +44,7 @@ Another app allows users to rank their mood from 1% to 100%. This establishes a 
 
 Numerous mood tracking systems use emojis to symbolize mood, linking emojis to specific events or actions. For instance, a frowning face emoji might be associated with “work.” However, these outcomes are overly general and lack meaningful insight. Some platforms place emojis on a calendar, so January 15th might have a smiley face. Yet, this approach is too vague to be valuable.
 
-# Why This System Works
+## Why This System Works
 
 The mood tracking system I developed, called Tracks, prompts users to answer a series of straightforward yet revealing personal questions (e.g., “Have you been smiling/laughing?”). Responding to these 10 questions is akin to being genuinely asked “how are you?” by someone who sincerely wants to know the answer. The response options are intuitive, and the most suitable answer is always available.
 
