@@ -1,22 +1,21 @@
-# Tracks
+# Tracks - Mood Tracking System
 
 ## Project Description
 
-A tool to evaluate mood.
+Tracks is a system to monitor and promote mental well-being by tracking mood. It was developed over the course of several years and is being designed as a web-based tool that anyone can use.
 
 ## Features
 
-- Input responses to 10 Mood questions.
-- Gives a Mood score between 0-100.
-- Includes the date and time.
+- Score mood between 0-100. This feature allows users to track their mood on a scale of 0 to 100.
 
-- Input responses to 5 Mania questions. (Coming soon!)
-- Gives a Mania score between 0-10. (Coming soon!)
-- Graph your Mood and Mania data. (Coming soon!)
+Coming soon:
+- Score mania between 0-5. This feature will allow users to track their levels of mania, a symptom of bipolar disorder.
+- Graph results to identify trends in mood. This feature will allow users to visualize their mood data over time, so they can identify patterns and trends.
+- Add notes to better observe changes in mood. This feature will allows users to add notes to their mood entries, such as what they were doing or feeling at the time.
 
 ## Acknowledgements
 
-Mood questions, responses, and mood score formula by Ben Wheatley.
+Tracks uses a system of tracking mood developed by Ben Wheatley.
 
 ## Overview
 
