@@ -10,7 +10,7 @@ Tracks is a system to monitor and promote mental well-being by tracking mood. It
 
 Coming soon:
 - Score mania between 0-5.
-This feature will allow users to track their levels of mania, a symptom of bipolar disorder.
+This feature will allow users to track their levels of mania, a symptom of bipolar disorder, on a scale of 0 to 5.
 
 - Graph results to identify trends in mood.
 This feature will allow users to visualize their mood data over time, so they can identify patterns and trends.
