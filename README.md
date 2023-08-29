@@ -9,9 +9,14 @@ Tracks is a system to monitor and promote mental well-being by tracking mood. It
 - Score mood between 0-100. This feature allows users to track their mood on a scale of 0 to 100.
 
 Coming soon:
-- Score mania between 0-5. This feature will allow users to track their levels of mania, a symptom of bipolar disorder.
-- Graph results to identify trends in mood. This feature will allow users to visualize their mood data over time, so they can identify patterns and trends.
-- Add notes to better observe changes in mood. This feature will allows users to add notes to their mood entries, such as what they were doing or feeling at the time.
+- Score mania between 0-5.
+This feature will allow users to track their levels of mania, a symptom of bipolar disorder.
+
+- Graph results to identify trends in mood.
+This feature will allow users to visualize their mood data over time, so they can identify patterns and trends.
+
+- Add notes to better observe changes in mood.
+This feature will allows users to add notes to their mood entries, such as what they were doing or feeling at the time.
 
 ## Acknowledgements
 
