@@ -20,7 +20,7 @@ This feature will allows users to add notes to their mood entries, such as what 
 
 ## Acknowledgements
 
-Tracks uses a system of tracking mood developed by Ben Wheatley.
+Tracks uses a method of tracking mood developed by Ben Wheatley.
 
 ## Overview
 
