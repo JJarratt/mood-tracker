@@ -15,7 +15,9 @@ body {
     display: flex; /* Use flexbox layout */
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center items horizontally */
-    background-color: #87CEEB; /* Set the background color for the container */
+/*     background-color: #87CEEB; /* Set the background color for the container */ */
+    background-color: #6272a4;
+    
 }
 
 /* Styling for question containers */
