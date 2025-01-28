@@ -61,31 +61,41 @@ function calculateMood() {
 
   let moodResult = '';
 
-  // Determine the mood result based on the mood score
-  if (moodScore >= 90) {
-    moodResult = 'Extreme mood elevation';
-  } else if (moodScore >= 80) {
-    moodResult = 'Memorable mood elevation';
-  } else if (moodScore >= 70) {
-    moodResult = 'Substantial mood elevation';
-  } else if (moodScore >= 60) {
-    moodResult = 'Significant mood elevation';
-  } else if (moodScore >= 51) {
-    moodResult = 'Slight mood elevation';
-  } else if (moodScore === 50) {
-    moodResult = 'Ok (so-so)';
-  } else if (moodScore >= 40) {
-    moodResult = 'Mildly low mood';
-  } else if (moodScore >= 30) {
-    moodResult = 'Moderately low mood';
-  } else if (moodScore >= 20) {
-    moodResult = 'Seriously low mood';
-  } else if (moodScore >= 10) {
-    moodResult = 'Severely low mood';
-  } else {
-    moodResult = 'Extremely low mood';
-  }
+  // // Determine the mood result based on the mood score
+  // if (moodScore >= 90) {
+  //   moodResult = 'Extreme mood elevation';
+  // } else if (moodScore >= 80) {
+  //   moodResult = 'Memorable mood elevation';
+  // } else if (moodScore >= 70) {
+  //   moodResult = 'Substantial mood elevation';
+  // } else if (moodScore >= 60) {
+  //   moodResult = 'Significant mood elevation';
+  // } else if (moodScore >= 51) {
+  //   moodResult = 'Slight mood elevation';
+  // } else if (moodScore === 50) {
+  //   moodResult = 'Ok (so-so)';
+  // } else if (moodScore >= 40) {
+  //   moodResult = 'Mildly low mood';
+  // } else if (moodScore >= 30) {
+  //   moodResult = 'Moderately low mood';
+  // } else if (moodScore >= 20) {
+  //   moodResult = 'Seriously low mood';
+  // } else if (moodScore >= 10) {
+  //   moodResult = 'Severely low mood';
+  // } else {
+  //   moodResult = 'Extremely low mood';
+  // }
 
+  // Simplified mood results
+  let moodResult = '';
+  if (roundedMoodScore > 50) {
+    moodResult = 'Your Mood is Up';
+  } else if (roundedMoodScore === 50) {
+    moodResult = 'Your Mood is Ok (So-So)';
+  } else {
+    moodResult = 'Your Mood is Down';
+  }
+  
   // Get the current date
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString('en-US', {
