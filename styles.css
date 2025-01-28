@@ -2,7 +2,7 @@
 body {
     font-family: 'Montserrat', Arial, sans-serif;
     height: 100vh;
-    background-color: #000000; /* Set the background color for the page */
+    background-color: #282a36; /* Set the background color for the page */
 }
 
 /* Styling for the main container */
@@ -16,7 +16,7 @@ body {
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center items horizontally */
 /*     background-color: #87CEEB;  */
-    background-color: #8be9fd; /* Set the background color for the container */
+    background-color: #bd93f9; /* Set the background color for the container */
     
 }
 
