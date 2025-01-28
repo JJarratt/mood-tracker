@@ -115,12 +115,12 @@ function calculateMood() {
   document.getElementById('result').textContent += `${formattedTime}\n\n\n\n`;
 
   // Mood results
-  document.getElementById('result').textContent += `Your mood score is ${roundedMoodScore}\n`;
+  document.getElementById('result').textContent += `Mood Score is:\n${roundedMoodScore}\n`;
   document.getElementById('result').textContent += `${moodResult}`;
 
   // DISCLAIMER
-  document.getElementById('result').textContent += `\n\n\n\n\n`;
-  document.getElementById('result').textContent += `NOT MEDICAL ADVICE`;
+  // document.getElementById('result').textContent += `\n\n\n\n\n`;
+  // document.getElementById('result').textContent += `NOT MEDICAL ADVICE`;
 
   // Scroll to the results section
   const resultElement = document.getElementById('result');
