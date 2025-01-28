@@ -87,7 +87,6 @@ function calculateMood() {
   // }
 
   // Simplified mood results
-  let moodResult = '';
   if (roundedMoodScore > 50) {
     moodResult = 'Your Mood is Up';
   } else if (roundedMoodScore === 50) {
