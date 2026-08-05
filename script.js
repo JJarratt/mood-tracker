@@ -42,7 +42,7 @@ selectElements.forEach(select => {
 // Function to calculate the mood based on user responses
 function calculateMood() {
   // Reset the content of the result element
-  document.getElementById('result').textContent = "";
+  document.getElementById('result').innerHTML = "";
 
   // Get mood score from individual responses
   let moodScore = responses.reduce((acc, response) => acc + response, 0);
@@ -52,6 +52,16 @@ function calculateMood() {
     
   // Round the mood score
   let roundedMoodScore = Math.round(moodScore);
+
+  // Handle invalid (0) mood score
+  if (roundedMoodScore === 0) {
+    document.getElementById('result').innerHTML =
+      'Results are invalid. <a href="#" onclick="location.reload(); return false;">Please try again.</a>';
+
+    // Scroll to the results section
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
 
   // Calculate the Juice: sum of mood questions associated with increased mania
   let juice = responses.slice(0, 5).reduce((acc, response) => acc + response, 0);
