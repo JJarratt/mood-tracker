@@ -56,7 +56,7 @@ function calculateMood() {
   // Handle invalid (0) mood score
   if (roundedMoodScore === 0) {
     document.getElementById('result').innerHTML =
-      'Results are invalid. Please reset.';
+      '<br>Results are invalid.<p> Please reset.</br>';
 
     // Scroll to the results section
     document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
